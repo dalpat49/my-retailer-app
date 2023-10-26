@@ -100,7 +100,7 @@ const changeUserNumber = () => {
           <div class="mb-10 mt-2">
             <label
               for="number"
-              class="block font-bold mb-3 text-sm text-gray-900 dark:text-white"
+              class="block font-bold mb-3 text-sm text-gray-900 "
               >Enter Your Mobile Number</label
             >
             <input
@@ -126,13 +126,13 @@ const changeUserNumber = () => {
           <div class="mb-2 mt-2">
             <div class="flex justify-between">
               <p
-                class="block font-bold mb-3 text-sm text-gray-900 dark:text-white"
+                class="block font-bold mb-3 text-sm text-gray-900 "
               >
                 +91 6367667129
               </p>
               <p
                 @click.prevent="changeUserNumber"
-                class="block font-bold mb-3 text-sm text-[#ED1A3B] dark:text-white"
+                class="block font-bold mb-3 text-sm text-[#ED1A3B] "
               >
                 change
               </p>

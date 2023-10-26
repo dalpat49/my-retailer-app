@@ -39,7 +39,7 @@ for (let i = 1; i <= 10; i++) {
         <div class="mr-4 w-1/5  flex justify-center p-2 rounded-full bg-[#F5F5F5]">
           <img
           width="100"
-            src="http://localhost:8080/img/newOfferImage/bell.png"
+            src="./img/newOfferImage/bell.png"
           />
         </div>
         <!-- Order Number and Message -->
