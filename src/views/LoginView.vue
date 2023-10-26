@@ -1,6 +1,6 @@
 <!-- eslint-disable no-unused-vars -->
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 
 // variables start
@@ -9,12 +9,18 @@ const isUserPuttingNunmbers = ref(true);
 const isUserPuttingOtp = ref(false);
 const userNumber = ref(null);
 
+onMounted(()=>{
+  if(localStorage.getItem("userinfo") !== null){
+    router.push('/my-order')
+  }
+})
+
+
 //send otp functions
 const sendTheOtptoUser = () => {
   try {
     if (userNumber.value == null || userNumber.value < 10) {
         alert('Please write a number less than 10');
-    
     } else {
         isUserPuttingNunmbers.value = false;
       isUserPuttingOtp.value = true;
@@ -26,7 +32,9 @@ const sendTheOtptoUser = () => {
 // verify otp functions
 const verifyuserOtp = () => {
   try {
-    router.push("/home");
+    localStorage.setItem('userinfo' , 'dalpat')
+    router.push("/my-order");
+    window.location.reload();
   } catch (e) {
     console.log(e);
   }
@@ -41,9 +49,7 @@ const changeUserNumber = () => {
     console.log(err);
   }
 };
-
 //otp auto froward code start
-document.addEventListener("DOMContentLoaded", function (event) {
   function OTPInput() {
     const inputs = document.querySelectorAll("#otp > *[id]");
     for (let i = 0; i < inputs.length; i++) {
@@ -67,8 +73,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-  OTPInput();
-});
+
+  onMounted(()=>{
+
+    OTPInput();
+  })
+
 //otp auto froward code ends
 </script>
 

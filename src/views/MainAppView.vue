@@ -9,26 +9,26 @@ const bottomNavigationVariobales = ref([
   {
     value: "myOrder",
     name: "My Order",
-    path:'/',
-    iconImage: "/../../img/bottomIcons/my-order.png",
+    path:'/directions',
+    iconImage: "/../../../img/bottomIcons/my-order.png",
   },
   {
     value: "newOffers",
     name: "New Offers",
     path:'/directions',
-    iconImage: "/../../img/bottomIcons/newOffers.png",
+    iconImage: "/../../../img/bottomIcons/newOffers.png",
   },
   {
     value: "products",
     name: "Products",
     path:'/map',
-    iconImage: "/../../img/bottomIcons/products.png",
+    iconImage: "/../../../img/bottomIcons/products.png",
   },
   {
     value: "notification",
     name: "Notifications",
     path:'/map',
-    iconImage: "/../../img/bottomIcons/notification.png",
+    iconImage: "/../../../img/bottomIcons/notification.png",
   },
 ]);
 </script>
@@ -41,7 +41,7 @@ const bottomNavigationVariobales = ref([
       <div class="d-flex">
         <!-- Avatar -->
         <v-avatar class="mr-2">
-          <img src="./../public/avatar.png" alt="Avatar" width="200" />
+          <img src="./../../public/avatar.png" alt="Avatar" width="200" />
         </v-avatar>
       </div>
 
@@ -59,14 +59,14 @@ const bottomNavigationVariobales = ref([
       <!-- share btn start  -->
       <v-btn icon @click="openCart">
         <v-avatar class="p-2">
-          <v-img src="./../../img/share.png" width="20" />
+          <v-img src="./../../../img/share.png" width="20" />
         </v-avatar>
       </v-btn>
 
       <!-- cart btn start  -->
       <v-btn icon @click="openCart">
         <v-avatar class="p-2">
-          <v-img src="./../../img/cart.svg" width="20" />
+          <v-img src="./../../../img/cart.svg" width="20" />
         </v-avatar>
       </v-btn>
     </v-app-bar>

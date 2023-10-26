@@ -12,25 +12,25 @@ const bottomNavigationVariobales = ref([
   {
     value: "myOrder",
     name: "My Order",
-    path: "/",
+    path: "/my-order",
     iconImage: "/../../img/bottomIcons/my-order.png",
   },
   {
     value: "newOffers",
     name: "New Offers",
-    path: "/directions",
+    path: "/new-offers",
     iconImage: "/../../img/bottomIcons/newOffers.png",
   },
   {
     value: "products",
     name: "Products",
-    path: "/map",
+    path: "/products",
     iconImage: "/../../img/bottomIcons/products.png",
   },
   {
     value: "notification",
     name: "Notifications",
-    path: "/map",
+    path: "/notifications",
     iconImage: "/../../img/bottomIcons/notification.png",
   },
 ]);
