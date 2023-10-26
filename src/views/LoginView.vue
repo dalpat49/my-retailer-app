@@ -86,7 +86,7 @@ const changeUserNumber = () => {
   <section class="h-[100vh] bg-[#ED1A3B]">
     <div
       style="
-        background: url('http://localhost:8080/mainlogo.jpeg') no-repeat;
+        background: url('./mainlogo.jpeg') no-repeat;
         height: 60vh;
         background-size: cover;
         background-position: center;
