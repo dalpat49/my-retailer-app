@@ -83,7 +83,7 @@ const changeUserNumber = () => {
 </script>
 
 <template>
-  <section class="h-[100vh] bg-[#ED1A3B]">
+  <section class="h-[50vh] bg-[#ED1A3B]">
     <div
       style="
         background: url('./mainlogo.jpeg') no-repeat;
