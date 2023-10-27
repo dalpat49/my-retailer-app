@@ -1,19 +1,20 @@
 <script setup>
 import { onMounted, ref } from "vue";
+
+import { useRouter } from "vue-router";
 import axios from "axios";
 
 import LoginView from "./views/LoginView.vue";
 
 console.log(axios.defaults.baseURL);
 const bottomNavigationvalue = ref("myOrder");
-
-
+const router  = useRouter();
 const bottomNavigationVariobales = ref([
   {
     value: "myOrder",
     name: "My Order",
     path: "/my-order",
-    iconImage: "./img/bottomIcons/my-order.png", 
+    iconImage: "./img/bottomIcons/my-order.png",
   },
   {
     value: "newOffers",
@@ -37,62 +38,70 @@ const bottomNavigationVariobales = ref([
 
 const userIsLogin = ref(false);
 
-console.log(localStorage.getItem('userinfo'));
-onMounted(()=>{
-  if(localStorage.getItem('userinfo') != null ){
+console.log(localStorage.getItem("userinfo"));
+onMounted(() => {
+  if (localStorage.getItem("userinfo") != null) {
     userIsLogin.value = true;
-  }
-  else{
+  } else {
     userIsLogin.value = false;
   }
-})
+
+  
+});
+console.log(router.currentRoute)
+
+
+const openCart= ()=>{
+  router.push('/user-cart')
+}
 </script>
 
 <template>
-
-  <!-- if user is login start -->
-  <div v-if="userIsLogin == true">
-    <v-app>
+  <v-app>
+    <!-- if user is login start -->
+    <div v-if="userIsLogin == true">
       <!-- header bar start  -->
-      <v-app-bar color="#ED1A3B" app class="px-2">
-        <!-- avatar image and company logo -->
-        <div class="d-flex">
-          <!-- Avatar -->
-          <v-avatar class="mr-2">
-            <img src="./../public/avatar.png" alt="Avatar" width="200" />
-          </v-avatar>
-        </div>
+      <div>
+        <v-app-bar color="#ED1A3B" app class="px-2">
+          <!-- avatar image and company logo -->
+          <div class="d-flex">
+            <!-- Avatar -->
+            <v-avatar class="mr-2">
+              <img src="./../public/avatar.png" alt="Avatar" width="200" />
+            </v-avatar>
+          </div>
 
-        <!-- Company Logo start -->
-        <v-toolbar-title class="ml-2">
-          <v-img
-            src="http://localhost:8080/logo.png"
-            contain
-            max-height="70"
-            max-width="70"
-          ></v-img>
-        </v-toolbar-title>
-        <!-- Company Logo end -->
+          <!-- Company Logo start -->
+          <v-toolbar-title class="ml-2">
+            <v-img
+              src="http://localhost:8080/logo.png"
+              contain
+              max-height="70"
+              max-width="70"
+            ></v-img>
+          </v-toolbar-title>
+          <!-- Company Logo end -->
 
-        <!-- share btn start  -->
-        <v-btn icon @click="openCart">
-          <v-avatar class="p-2">
-            <v-img src="./../../img/share.png" width="20" />
-          </v-avatar>
-        </v-btn>
+          <!-- share btn start  -->
+          <v-btn icon @click="openCart">
+            <v-avatar class="p-2">
+              <v-img src="./../../img/share.png" width="20" />
+            </v-avatar>
+          </v-btn>
 
-        <!-- cart btn start  -->
-        <v-btn icon @click="openCart">
-          <v-avatar class="p-2">
-            <v-img src="./../../img/cart.svg" width="20" />
-          </v-avatar>
-        </v-btn>
-      </v-app-bar>
+          <!-- cart btn start  -->
+          <v-btn icon @click="openCart">
+            <v-avatar class="p-2">
+              <v-img src="./../../img/cart.svg" width="20" />
+            </v-avatar>
+          </v-btn>
+        </v-app-bar>
+      </div>
       <!-- header barend -->
 
       <!-- main components start -->
-      <v-main>
-        <router-view v-slot="{ Component }">
+      <v-main class="bg-[#F5F5F5] " >
+        <router-view v-slot="{ Component }" > 
           <transition name="slide" mode="out-in">
             <component :is="Component" />
           </transition>
@@ -101,12 +110,7 @@ onMounted(()=>{
       <!-- main components end -->
 
       <!-- bottom navigatin start  -->
-      <v-bottom-navigation
-        v-model="bottomNavigationvalue"
-        app
-        
-        color="teal"
-      >
+      <v-bottom-navigation v-model="bottomNavigationvalue" app color="teal">
         <v-btn
           height="100%"
           v-for="(item, index) in bottomNavigationVariobales"
@@ -119,13 +123,13 @@ onMounted(()=>{
         </v-btn>
       </v-bottom-navigation>
       <!-- bottom navigatin end  -->
-    </v-app>
-  </div>
-  <!-- if user is login end -->
+    </div>
+    <!-- if user is login end -->
 
-  <div v-if="userIsLogin == false ">
-    <LoginView />
-  </div>
+    <div v-if="userIsLogin == false">
+      <LoginView />
+    </div>
+  </v-app>
 </template>
 
 <style lang="scss">

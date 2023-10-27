@@ -1,6 +1,10 @@
 <script setup>
 import {ref} from 'vue';
 const cardDetails = ref([]) ;
+import { useRouter } from 'vue-router'
+
+
+const router = useRouter();
 
 for (let i = 0; i < 20; i++) {
     const heading = `Heading ${i + 1}`;
@@ -21,11 +25,14 @@ for (let i = 0; i < 20; i++) {
 
 console.log(cardDetails.value);
 
-
+const goToOrderDetailPage = ()=>{
+  router.push('/order-detail')
+}
 
 </script>
 
 <template>
+  
   <section class="px-3 py-2">
     <!-- heading  -->
     <div class="font-bold my-2">
@@ -33,9 +40,10 @@ console.log(cardDetails.value);
     </div>
 
     <!-- card start  -->
-    <div>
+    <div class="">
       <!-- heading start  -->
       <div
+      @click="goToOrderDetailPage"
         class="w-full my-3 max-w-sm bg-white rounded-lg shadow-xl p-4 flex flex-col items-start"
         v-for="(item , index) in cardDetails"
         :key="index"
