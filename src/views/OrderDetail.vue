@@ -1,8 +1,13 @@
-<sciprt setup>
+<script setup>
+import InnerLayoutNav from "@/layouts/InnerLayoutNav.vue";
 
-</sciprt>
+</script>
 
 <template>
+
+  <div>
+    <InnerLayoutNav title="Order Detail"></InnerLayoutNav>
+  </div>
   <section>
     <div class="p-5">
       <div class="w-full bg-white p-4 border rounded-lg shadow-md">

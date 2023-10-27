@@ -1,8 +1,14 @@
-<script setup></script>
+<script setup>
+
+
+
+
+
+</script>
 
 <template>
-
+ 
   <div>
-    <slot />
+    <router-view></router-view>
   </div>
 </template>

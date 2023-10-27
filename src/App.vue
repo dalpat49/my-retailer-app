@@ -7,34 +7,8 @@ import axios from "axios";
 import LoginView from "./views/LoginView.vue";
 
 console.log(axios.defaults.baseURL);
-const bottomNavigationvalue = ref("myOrder");
 const router  = useRouter();
-const bottomNavigationVariobales = ref([
-  {
-    value: "myOrder",
-    name: "My Order",
-    path: "/my-order",
-    iconImage: "./img/bottomIcons/my-order.png",
-  },
-  {
-    value: "newOffers",
-    name: "New Offers",
-    path: "/new-offers",
-    iconImage: "./img/bottomIcons/newOffers.png",
-  },
-  {
-    value: "products",
-    name: "Products",
-    path: "/products",
-    iconImage: "./img/bottomIcons/products.png",
-  },
-  {
-    value: "notification",
-    name: "Notifications",
-    path: "/notifications",
-    iconImage: "./img/bottomIcons/notification.png",
-  },
-]);
+
 
 const userIsLogin = ref(false);
 
@@ -51,9 +25,6 @@ onMounted(() => {
 console.log(router.currentRoute)
 
 
-const openCart= ()=>{
-  router.push('/user-cart')
-}
 </script>
 
 <template>
@@ -61,67 +32,17 @@ const openCart= ()=>{
     <!-- if user is login start -->
     <div v-if="userIsLogin == true">
       <!-- header bar start  -->
-      <div>
-        <v-app-bar color="#ED1A3B" app class="px-2">
-          <!-- avatar image and company logo -->
-          <div class="d-flex">
-            <!-- Avatar -->
-            <v-avatar class="mr-2">
-              <img src="./../public/avatar.png" alt="Avatar" width="200" />
-            </v-avatar>
-          </div>
-
-          <!-- Company Logo start -->
-          <v-toolbar-title class="ml-2">
-            <v-img
-              src="http://localhost:8080/logo.png"
-              contain
-              max-height="70"
-              max-width="70"
-            ></v-img>
-          </v-toolbar-title>
-          <!-- Company Logo end -->
-
-          <!-- share btn start  -->
-          <v-btn icon @click="openCart">
-            <v-avatar class="p-2">
-              <v-img src="./../../img/share.png" width="20" />
-            </v-avatar>
-          </v-btn>
-
-          <!-- cart btn start  -->
-          <v-btn icon @click="openCart">
-            <v-avatar class="p-2">
-              <v-img src="./../../img/cart.svg" width="20" />
-            </v-avatar>
-          </v-btn>
-        </v-app-bar>
-      </div>
+     
       <!-- header barend -->
 
       <!-- main components start -->
-      <v-main class="bg-[#F5F5F5] " >
-        <router-view v-slot="{ Component }" > 
-          <transition name="slide" mode="out-in">
-            <component :is="Component" />
-          </transition>
+      <v-main class="bg-[#F5F5F5]" >
+        <router-view  > 
         </router-view>
       </v-main>
       <!-- main components end -->
 
-      <!-- bottom navigatin start  -->
-      <v-bottom-navigation v-model="bottomNavigationvalue" app color="teal">
-        <v-btn
-          height="100%"
-          v-for="(item, index) in bottomNavigationVariobales"
-          :key="index"
-          :to="item.path"
-          :value="item.value"
-        >
-          <v-img :src="item.iconImage" width="20" />
-          <span>{{ item.name }}</span>
-        </v-btn>
-      </v-bottom-navigation>
+     
       <!-- bottom navigatin end  -->
     </div>
     <!-- if user is login end -->

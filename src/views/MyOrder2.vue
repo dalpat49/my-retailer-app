@@ -23,10 +23,9 @@ for (let i = 0; i < 20; i++) {
     cardDetails.value.push(card);
 }
 
-console.log(cardDetails.value);
 
 const goToOrderDetailPage = ()=>{
-  router.push('/order-detail')
+  router.push('/inner/order-detail')
 }
 
 </script>

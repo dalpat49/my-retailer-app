@@ -1,6 +1,14 @@
-<script setup></script>
+<script setup>
+
+
+import InnerLayoutNav from '@/layouts/InnerLayoutNav.vue';
+
+</script>
 
 <template>
+    <div>
+        <InnerLayoutNav title="My Cart" ></InnerLayoutNav>
+    </div>
     
   <section class="px-3 py-2">
     <!-- heading  -->
