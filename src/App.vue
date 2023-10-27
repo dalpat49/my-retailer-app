@@ -104,7 +104,7 @@ onMounted(()=>{
       <v-bottom-navigation
         v-model="bottomNavigationvalue"
         app
-        grow
+        
         color="teal"
       >
         <v-btn
