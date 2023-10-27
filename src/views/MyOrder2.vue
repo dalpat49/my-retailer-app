@@ -43,7 +43,7 @@ const goToOrderDetailPage = ()=>{
       <!-- heading start  -->
       <div
       @click="goToOrderDetailPage"
-        class="w-full my-3 max-w-sm bg-white rounded-lg shadow-xl p-4 flex flex-col items-start"
+        class="w-full my-3  bg-white rounded-lg shadow-xl p-4 flex flex-col items-start"
         v-for="(item , index) in cardDetails"
         :key="index"
       >
@@ -52,7 +52,7 @@ const goToOrderDetailPage = ()=>{
             {{item.heading.slice(0,20)}}...
           </div>
           <div
-            class="ml-2 bg-[#FFEAD4] px-5 py-1 text-[#D25B00] font-bold rounded-lg"
+            class="ml-2 bg-[#FFEAD4] px-3 py-1 text-sm text-[#D25B00] font-bold rounded-lg"
           >
             {{item.status}}
           </div>

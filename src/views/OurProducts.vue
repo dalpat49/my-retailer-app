@@ -51,7 +51,7 @@ for (let i = 1; i <= 20; i++) {
     <!-- card start  -->
     <div>
       <div
-        class="w-full my-4 max-w-sm bg-white rounded-lg shadow-xl p-1 flex py-3"
+        class="w-full my-4  bg-white rounded-lg shadow-xl p-1 flex py-3"
         v-for="(item, index) in newOfferData"
         :key="index"
       >
